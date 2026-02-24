@@ -39,6 +39,18 @@ jobs:
         with:
           version: '17'
           architecture: x64
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+
+          # 新增修复步骤 - 移到 Build Riru modules 之前
+      - name: Temporarily remove bintray plugin from FingerprintIdentify
+        run: |
+          echo "=== Before modification ==="
+          head -20 3rdparty/FingerprintIdentify/build.gradle   # 显示前20行，确认文件内容
+          sed -i 's/^apply plugin: .com.novoda.bintray-release./\/\/&/' 3rdparty/FingerprintIdentify/build.gradle
+          sed -i '/bintray {/,/^}/ s/^/\/\//' 3rdparty/FingerprintIdentify/build.gradle
+          echo "=== After modification ==="
+          head -20 3rdparty/FingerprintIdentify/build.gradle   # 确认修改生效
       - name: Build Riru modules
         run: cd ./module && bash ./make.sh
         env:
