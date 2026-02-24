@@ -1,0 +1,31 @@
+apply plugin: 'com.android.library'
+
+android {
+    namespace 'com.wei.android.lib.fingerprintidentify'
+
+    compileSdk 34
+    defaultConfig {
+        minSdk 14
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles 'proguard-rules.pro'
+        }
+    }
+    android {
+        lintOptions {
+            abortOnError false
+        }
+    }
+}
+
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'androidx.biometric:biometric:1.1.0'
+}
