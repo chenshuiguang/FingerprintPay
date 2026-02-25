@@ -29,7 +29,7 @@ import com.surcumference.fingerprint.R;
 import com.surcumference.fingerprint.adapter.PreferenceAdapter;
 import com.surcumference.fingerprint.network.update.UpdateFactory;
 import com.surcumference.fingerprint.util.Task;
-import com.surcumference.fingerprint.util.Umeng;
+//import com.surcumference.fingerprint.util.Umeng;  // 禁用友盟统计
 import com.surcumference.fingerprint.util.bugfixer.TagManagerBugFixer;
 import com.surcumference.fingerprint.view.DonateView;
 
