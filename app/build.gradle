@@ -7,8 +7,8 @@ android {
         applicationId "com.surcumference.fingerprintpay"
         minSdk 14
         targetSdk 34
-        versionCode 37
-        versionName "6.0.3"
+        versionCode 38
+        versionName "6.0.5"
         buildConfigField "String", "APP_PRODUCT_NAME", "\"FingerprintPay\""
     }
 
@@ -66,7 +66,7 @@ dependencies {
     implementation project(":3rdparty:FingerprintIdentify:FingerprintIdentifyLib")
     implementation 'com.google.code.gson:gson:2.8.6'
     implementation 'com.squareup.okhttp3:okhttp:3.12.8'
-    implementation 'com.umeng.analytics:analytics:6.1.2'
+    //implementation 'com.umeng.analytics:analytics:6.1.2'  // 禁用友盟统计
     implementation 'com.crossbowffs.remotepreferences:remotepreferences:0.5'
     implementation 'com.github.AndroidDeveloperLB:MaterialPreferenceLibrary:10'
     implementation 'com.lzy.net:okgo:3.0.4'

@@ -30,7 +30,7 @@ import com.surcumference.fingerprint.listener.OnDismissListener;
 import com.surcumference.fingerprint.listener.OnShowListener;
 import com.surcumference.fingerprint.util.DpUtils;
 import com.surcumference.fingerprint.util.StyleUtils;
-import com.surcumference.fingerprint.util.Umeng;
+//import com.surcumference.fingerprint.util.Umeng;  // 禁用友盟统计 
 import com.surcumference.fingerprint.util.drawable.XDrawable;
 
 /**
@@ -77,7 +77,7 @@ public abstract class DialogFrameLayout<T extends DialogFrameLayout> extends Fra
         window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
         window.setBackgroundDrawable(dialogWindowBackground());
         dialog.show();
-        Umeng.onResume(getContext());
+        //Umeng.onResume(getContext());  // 禁用友盟统计
         mDialog = dialog;
         return dialog;
     }
@@ -88,7 +88,7 @@ public abstract class DialogFrameLayout<T extends DialogFrameLayout> extends Fra
         if (listener != null) {
             listener.onDismiss(this);
         }
-        Umeng.onPause(getContext());
+        //Umeng.onPause(getContext());  // 禁用友盟统计
     }
 
     @Override
@@ -97,7 +97,7 @@ public abstract class DialogFrameLayout<T extends DialogFrameLayout> extends Fra
         if (listener != null) {
             listener.onShow((T)this);
         }
-        Umeng.onResume(getContext());
+        //Umeng.onResume(getContext());  // 禁用友盟统计
     }
 
     public T withOnDismissListener(OnDismissListener listener) {

@@ -43,7 +43,7 @@ public class HomeActivity extends AppCompatActivity implements AdapterView.OnIte
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Umeng.init(this);
+        //Umeng.init(this);  // 禁用友盟统计
         setContentView(R.layout.home);
 
         ListView listView = (ListView) findViewById(R.id.list);
@@ -63,7 +63,7 @@ public class HomeActivity extends AppCompatActivity implements AdapterView.OnIte
         mListAdapter = new PreferenceAdapter(list);
         listView.setAdapter(mListAdapter);
         listView.setOnItemClickListener(this);
-        Task.onMain(1000L, () -> UpdateFactory.doUpdateCheck(HomeActivity.this));
+        //Task.onMain(1000L, () -> UpdateFactory.doUpdateCheck(HomeActivity.this));  // 禁用更新检查
         TagManagerBugFixer.fix();
     }
 
@@ -102,13 +102,13 @@ public class HomeActivity extends AppCompatActivity implements AdapterView.OnIte
     @Override
     protected void onResume() {
         super.onResume();
-        Umeng.onResume(this);
+        //Umeng.onResume(this);  // 禁用友盟统计
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        Umeng.onPause(this);
+        //Umeng.onPause(this);  // 禁用友盟统计
     }
 
     @Override

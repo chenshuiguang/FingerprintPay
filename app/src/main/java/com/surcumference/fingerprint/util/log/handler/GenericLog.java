@@ -2,7 +2,7 @@ package com.surcumference.fingerprint.util.log.handler;
 
 import android.util.Log;
 
-import com.surcumference.fingerprint.util.Umeng;
+//import com.surcumference.fingerprint.util.Umeng;  // 禁用友盟统计 
 import com.surcumference.fingerprint.util.log.inf.ILog;
 
 /**
@@ -18,6 +18,6 @@ public class GenericLog implements ILog {
     @Override
     public void error(String tag, String msg) {
         Log.e(tag, msg);
-        Umeng.reportError(tag + " " + msg);
+        //Umeng.reportError(tag + " " + msg);  // 禁用友盟统计
     }
 }

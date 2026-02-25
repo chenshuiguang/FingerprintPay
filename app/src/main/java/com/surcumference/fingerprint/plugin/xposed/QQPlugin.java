@@ -21,7 +21,7 @@ import com.surcumference.fingerprint.plugin.inf.IAppPlugin;
 import com.surcumference.fingerprint.util.FileUtils;
 import com.surcumference.fingerprint.util.Task;
 import com.surcumference.fingerprint.util.Tools;
-import com.surcumference.fingerprint.util.Umeng;
+//import com.surcumference.fingerprint.util.Umeng;  // 禁用友盟统计
 import com.surcumference.fingerprint.util.log.L;
 
 import de.robv.android.xposed.XC_MethodHook;
@@ -52,7 +52,7 @@ public class QQPlugin {
              *     at com.umeng.analytics.pro.cc.f(StoreHelper.java:127)
              *     at com.umeng.analytics.AnalyticsConfig.getVerticalType(AnalyticsConfig.java:133)
              */
-            Task.onMain(1000, ()-> Umeng.init(application));
+            //Task.onMain(1000, ()-> Umeng.init(application));  // 禁用友盟统计
             String niceName = FileUtils.getCmdLineContentByPid(android.os.Process.myPid());
             if (!TextUtils.isEmpty(niceName)
                     && !niceName.contains(":")) {

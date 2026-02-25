@@ -1,6 +1,6 @@
 package com.surcumference.fingerprint.util.log.handler;
 
-import com.surcumference.fingerprint.util.Umeng;
+//import com.surcumference.fingerprint.util.Umeng;  // 禁用友盟统计 
 import com.surcumference.fingerprint.util.log.inf.ILog;
 
 import de.robv.android.xposed.XposedBridge;
@@ -19,6 +19,6 @@ public class XposedLog implements ILog {
     @Override
     public void error(String tag, String msg) {
         XposedBridge.log(tag + " " + msg);
-        Umeng.reportError(tag + " " + msg);
+        //Umeng.reportError(tag + " " + msg);  // 禁用友盟统计
     }
 }

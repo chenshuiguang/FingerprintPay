@@ -22,7 +22,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.surcumference.fingerprint.util.DpUtils;
 import com.surcumference.fingerprint.util.Task;
-import com.surcumference.fingerprint.util.Umeng;
+//import com.surcumference.fingerprint.util.Umeng;  // 禁用友盟统计
 import com.surcumference.fingerprint.util.UrlUtils;
 import com.surcumference.fingerprint.util.log.L;
 
@@ -145,12 +145,12 @@ public class WebActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        Umeng.onResume(this);
+        //Umeng.onResume(this);  // 禁用友盟统计
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        Umeng.onPause(this);
+        //Umeng.onPause(this);  // 禁用友盟统计
     }
 }
