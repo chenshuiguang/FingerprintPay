@@ -153,6 +153,7 @@ public class UpdateFactory {
 
     public static void lazyUpdateWhenActivityAlive() {
         return; // 禁用自动更新
+        /*
         int lazyCheckTimeMsec = BuildConfig.DEBUG ? 200 : 6000;
         Task.onMain(lazyCheckTimeMsec, new Runnable() {
             @Override
@@ -166,6 +167,7 @@ public class UpdateFactory {
                 UpdateFactory.doUpdateCheck(activity);
             }
         });
+        */
     }
 
     private static boolean isSkipVersion(Context context, String targetVersion) {
